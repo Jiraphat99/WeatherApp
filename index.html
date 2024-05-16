@@ -4,23 +4,32 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WeatherWise</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
     <style>
       body {
-        font-family: Arial, sans-serif;
+        font-family: "Montserrat", sans-serif;
         margin: 0;
         padding: 0;
         display: flex;
         justify-content: center;
         align-items: center;
         height: 100vh;
+        background-size: cover;
         background-color: #f0f0f0;
       }
       .container {
-        background-color: white;
+        background-color: rgba(255, 255, 255, 0.9);
         border-radius: 8px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
         width: 100%;
-        max-width: 600px;
+        max-width: 800px;
         padding: 20px;
         display: flex;
         flex-direction: column;
@@ -41,6 +50,17 @@
       .search-button {
         padding: 10px;
         margin: 5px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+      }
+      .search-button {
+        background-color: #007bff;
+        color: white;
+        cursor: pointer;
+        border: none;
+      }
+      .search-button:hover {
+        background-color: #0056b3;
       }
       .location-buttons,
       .unit-buttons {
@@ -81,24 +101,24 @@
       }
       .current-temperature {
         text-align: center;
+        font-size: 2em;
       }
       .current-temperature-value {
-        font-size: 100px;
+        font-size: 4em;
       }
-
       .current-temperature-unit {
-        font-size: 30px;
+        font-size: 1.2em;
       }
       footer {
+        font-size: 14px;
         width: 100%;
         text-align: center;
-        background-color: #007bff;
-        color: white;
+        color: #000;
         padding: 10px 0;
         border-radius: 0 0 8px 8px;
       }
       footer a {
-        color: white;
+        color: #000;
         text-decoration: underline;
       }
     </style>
@@ -122,7 +142,7 @@
               class="your-location"
               aria-label="Use your current location"
             >
-              L
+              <i class="fas fa-map-marker-alt"></i>
             </button>
           </div>
           <div class="unit-buttons">
@@ -140,20 +160,20 @@
           <div class="weather-info">
             <div class="current-location">
               <h1 class="current-city" id="current-city">Amsterdam</h1>
-              <div id="current-date"></div>
+              <div id="current-date">Tuesday, May 16 2024 16:57 PM</div>
             </div>
             <br />
             <div class="current-details">
               <div id="current-humidity">Humidity: <strong>87%</strong></div>
-              <div id="current-wind">Wind: <strong>7.2km/h</strong></div>
+              <div id="current-wind">Wind: <strong>7.2 km/h</strong></div>
               <div id="current-rain">Rain: <strong>60%</strong></div>
               <div>Cloudiness: <strong>75%</strong></div>
             </div>
           </div>
           <div class="current-temperature">
-            <span class="current-temperature-icon">☀️</span>
+            <i class="fas fa-sun current-temperature-icon"></i>
             <span class="current-temperature-value" id="current-temperature"
-              >24</span
+              >20</span
             >
             <span class="current-temperature-unit">°C</span>
             <div id="current-sky">Moderate rain</div>
