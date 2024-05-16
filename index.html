@@ -3,57 +3,36 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>WeatherWise</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
       rel="stylesheet"
     />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-    />
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
     <link rel="stylesheet" href="style.css" />
+    <title>My weather application</title>
   </head>
   <body>
-    <div class="container">
+    <div class="weather-app">
       <header>
-        <div class="search-container">
-          <form id="search-form" class="search-form">
-            <input
-              type="search"
-              placeholder="Enter a city.."
-              required
-              class="search-input"
-              id="search-input"
-            />
-            <input type="submit" value="Search" class="search-button" />
-          </form>
-          <div class="location-buttons">
-            <button
-              class="your-location"
-              aria-label="Use your current location"
-            >
-              <i class="fas fa-map-marker-alt"></i>
-            </button>
-          </div>
-          <div class="unit-buttons">
-            <button class="change-unit" aria-label="Change to Celsius">
-              °C
-            </button>
-            <button class="change-unit" aria-label="Change to Fahrenheit">
-              °F
-            </button>
-          </div>
-        </div>
+        <form id="search-form">
+          <input
+            type="search"
+            placeholder="Enter a city.."
+            required
+            class="search-input"
+            id="search-input"
+          />
+          <input type="submit" value="Search" class="search-button" />
+        </form>
       </header>
       <main>
         <div class="current-weather">
-          <div class="weather-info">
-            <div class="current-location">
-              <h1 class="current-city" id="current-city">Amsterdam</h1>
-              <div class="current-date" id="current-date">
-                Tuesday, May 16 2024 16:57 PM
-              </div>
+          <div>
+            <h1 class="current-city" id="current-city">Paris</h1>
+            <div class="current-details">
+              <span id="current-date"></span>
             </div>
             <br />
             <div class="current-details">
@@ -64,16 +43,10 @@
             </div>
           </div>
           <div class="current-temperature">
-            <img
-              src="src/image/rainy.png"
-              alt="Rainy Icon"
-              class="current-temperature-icon"
-              id="current-temperature-icon"
-            />
-            <span class="current-temperature-value" id="current-temperature"
+            <span class="current-temperature-icon">☀️</span
+            ><span class="current-temperature-value" id="current-temperature"
               >24</span
-            >
-            <span class="current-temperature-unit">°C</span>
+            ><span class="current-temperature-unit">°C</span>
             <div class="currentSky" id="currentSky">Moderate rain</div>
           </div>
         </div>
@@ -88,15 +61,16 @@
           <a
             href="https://github.com/Jiraphat99/GitHub_Hosting_testing"
             target="_blank"
-            >on GitHub</a
+          >
+            on GitHub</a
           >
           and
           <a href="https://fantastic-panda-8233a5.netlify.app/" target="_blank"
             >hosted on Netlify</a
-          >.
+          >
         </p>
       </footer>
     </div>
-    <script src="javascript.js"></script>
   </body>
+  <script src="javascript.js"></script>
 </html>
