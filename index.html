@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WeatherWise</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f0f0f0;
+      }
+      .container {
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 600px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      header {
+        width: 100%;
+        text-align: center;
+      }
+      .search-form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        margin: 10px 0;
+      }
+      .search-input,
+      .search-button {
+        padding: 10px;
+        margin: 5px;
+      }
+      .location-buttons,
+      .unit-buttons {
+        display: flex;
+        gap: 10px;
+      }
+      .location-buttons button,
+      .unit-buttons button {
+        padding: 10px;
+        border: none;
+        border-radius: 4px;
+        background-color: #007bff;
+        color: white;
+        cursor: pointer;
+      }
+      .location-buttons button:hover,
+      .unit-buttons button:hover {
+        background-color: #0056b3;
+      }
+      .current-weather {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        margin: 20px 0;
+        padding: 10px;
+      }
+      .weather-info {
+        flex: 1;
+        font-size: 1.2em;
+      }
+      .current-location h1 {
+        font-size: 2em;
+        margin: 0;
+      }
+      .current-details div {
+        margin-bottom: 10px;
+      }
+      .current-temperature {
+        text-align: center;
+      }
+      .current-temperature-value {
+        font-size: 100px;
+      }
+
+      .current-temperature-unit {
+        font-size: 30px;
+      }
+      footer {
+        width: 100%;
+        text-align: center;
+        background-color: #007bff;
+        color: white;
+        padding: 10px 0;
+        border-radius: 0 0 8px 8px;
+      }
+      footer a {
+        color: white;
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="search-form">
+          <form id="search-form">
+            <input
+              type="search"
+              placeholder="Enter a city.."
+              required
+              class="search-input"
+              id="search-input"
+            />
+            <input type="submit" value="Search" class="search-button" />
+          </form>
+          <div class="location-buttons">
+            <button
+              class="your-location"
+              aria-label="Use your current location"
+            >
+              L
+            </button>
+          </div>
+          <div class="unit-buttons">
+            <button class="change-unit" aria-label="Change to Celsius">
+              °C
+            </button>
+            <button class="change-unit" aria-label="Change to Fahrenheit">
+              °F
+            </button>
+          </div>
+        </div>
+      </header>
+      <main>
+        <div class="current-weather">
+          <div class="weather-info">
+            <div class="current-location">
+              <h1 class="current-city" id="current-city">Amsterdam</h1>
+              <div id="current-date"></div>
+            </div>
+            <br />
+            <div class="current-details">
+              <div id="current-humidity">Humidity: <strong>87%</strong></div>
+              <div id="current-wind">Wind: <strong>7.2km/h</strong></div>
+              <div id="current-rain">Rain: <strong>60%</strong></div>
+              <div>Cloudiness: <strong>75%</strong></div>
+            </div>
+          </div>
+          <div class="current-temperature">
+            <span class="current-temperature-icon">☀️</span>
+            <span class="current-temperature-value" id="current-temperature"
+              >24</span
+            >
+            <span class="current-temperature-unit">°C</span>
+            <div id="current-sky">Moderate rain</div>
+          </div>
+        </div>
+      </main>
+      <footer>
+        <p>
+          This project was coded by
+          <a href="https://github.com/Jiraphat99" target="_blank"
+            >Jirapat Wonganan</a
+          >
+          and is
+          <a
+            href="https://github.com/Jiraphat99/GitHub_Hosting_testing"
+            target="_blank"
+            >on GitHub</a
+          >
+          and
+          <a href="https://fantastic-panda-8233a5.netlify.app/" target="_blank"
+            >hosted on Netlify</a
+          >.
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>
