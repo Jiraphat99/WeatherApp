@@ -1,0 +1,116 @@
+body {
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-size: cover;
+  background-color: #f0f0f0;
+}
+.container {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 800px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+header {
+  width: 100%;
+  text-align: center;
+}
+.search-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0;
+}
+.search-input,
+.search-button {
+  padding: 10px;
+  margin: 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+.search-button {
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  border: none;
+}
+.search-button:hover {
+  background-color: #0056b3;
+}
+.location-buttons,
+.unit-buttons {
+  display: flex;
+  gap: 10px;
+}
+.location-buttons button,
+.unit-buttons button {
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+}
+.location-buttons button:hover,
+.unit-buttons button:hover {
+  background-color: #0056b3;
+}
+.current-weather {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin: 20px 0;
+  padding: 10px;
+}
+.weather-info {
+  flex: 1;
+  font-size: 1.2em;
+}
+.current-location h1 {
+  font-size: 2em;
+  margin: 0;
+}
+.current-details div {
+  margin-bottom: 10px;
+}
+.current-temperature {
+  text-align: center;
+  font-size: 2em;
+}
+.current-temperature img {
+  width: 50px;
+  height: auto;
+}
+.currentSky {
+  font-size: 20px;
+}
+
+.current-temperature-value {
+  font-size: 120px;
+}
+.current-temperature-unit {
+  font-size: 50px;
+}
+footer {
+  font-size: 14px;
+  width: 100%;
+  text-align: center;
+  color: #000;
+  padding: 10px 0;
+  border-radius: 0 0 8px 8px;
+}
+footer a {
+  color: #000;
+  text-decoration: underline;
+}
