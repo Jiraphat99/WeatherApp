@@ -9,6 +9,7 @@ body {
   background-size: cover;
   background-color: #f0f0f0;
 }
+
 .container {
   background-color: rgba(255, 255, 255, 0.9);
   border-radius: 8px;
@@ -20,17 +21,26 @@ body {
   flex-direction: column;
   align-items: center;
 }
+
 header {
   width: 100%;
   text-align: center;
 }
-.search-form {
+
+.search-container {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 10px;
   margin: 10px 0;
 }
+
+.search-form {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
 .search-input,
 .search-button {
   padding: 10px;
@@ -38,20 +48,24 @@ header {
   border: 1px solid #ddd;
   border-radius: 4px;
 }
+
 .search-button {
   background-color: #007bff;
   color: white;
   cursor: pointer;
   border: none;
 }
+
 .search-button:hover {
   background-color: #0056b3;
 }
+
 .location-buttons,
 .unit-buttons {
   display: flex;
   gap: 10px;
 }
+
 .location-buttons button,
 .unit-buttons button {
   padding: 10px;
@@ -61,10 +75,12 @@ header {
   color: white;
   cursor: pointer;
 }
+
 .location-buttons button:hover,
 .unit-buttons button:hover {
   background-color: #0056b3;
 }
+
 .current-weather {
   display: flex;
   justify-content: space-between;
@@ -73,25 +89,39 @@ header {
   margin: 20px 0;
   padding: 10px;
 }
+
+.current-date {
+  font-size: 16px;
+}
+
+.current-details {
+  font-size: 16px;
+}
+
 .weather-info {
   flex: 1;
   font-size: 1.2em;
 }
+
 .current-location h1 {
   font-size: 2em;
   margin: 0;
 }
+
 .current-details div {
   margin-bottom: 10px;
 }
+
 .current-temperature {
   text-align: center;
-  font-size: 2em;
+  font-size: 15px;
 }
+
 .current-temperature img {
   width: 50px;
   height: auto;
 }
+
 .currentSky {
   font-size: 20px;
 }
@@ -99,9 +129,11 @@ header {
 .current-temperature-value {
   font-size: 120px;
 }
+
 .current-temperature-unit {
   font-size: 50px;
 }
+
 footer {
   font-size: 14px;
   width: 100%;
@@ -110,7 +142,24 @@ footer {
   padding: 10px 0;
   border-radius: 0 0 8px 8px;
 }
+
 footer a {
   color: #000;
   text-decoration: underline;
+}
+
+.weather-info {
+  flex: 1;
+  font-size: 1.2em;
+  margin-bottom: 20px;
+  margin-right: 60px;
+  margin-left: 10px;
+}
+
+.current-temperature {
+  text-align: center;
+  font-size: 15px;
+  margin-top: 20px;
+  margin-right: 20px;
+  margin-left: 10px;
 }
