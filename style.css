@@ -27,7 +27,7 @@ header {
   color: rgba(39, 33, 66, 0.4);
   font-size: 16px;
   padding: 20px;
-  width: 75%;
+  width: 80%;
   border-radius: 6px;
 }
 
@@ -42,12 +42,76 @@ header {
   border-radius: 5px;
 }
 
+.temperature-buttons {
+  display: flex;
+}
+
+.temperature-button {
+  font-size: 16px;
+  background-color: #885df1;
+  color: white;
+  border: none;
+  padding: 10px 20px; /* Adjust padding as needed */
+  margin-left: 5px;
+  line-height: 1;
+  border-radius: 5px;
+}
+
 main {
   padding: 30px 0;
 }
 
 .current-temperature {
   font-size: 48px;
+  aheader {
+    border-bottom: 1px solid #f9f7fe;
+    padding-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .search-form {
+    display: flex;
+    align-items: center;
+  }
+
+  .search-input {
+    background-color: #f9f7fe;
+    border: none;
+    color: rgba(39, 33, 66, 0.4);
+    font-size: 16px;
+    padding: 20px;
+    width: 60%;
+    border-radius: 6px;
+  }
+
+  .search-button {
+    margin-left: 5px;
+    font-size: 16px;
+    background-color: #885df1;
+    color: white;
+    border: none;
+    padding: 20px;
+    line-height: 1;
+    border-radius: 5px;
+  }
+
+  .temperature-buttons {
+    display: flex;
+    align-items: center;
+  }
+
+  .temperature-button {
+    font-size: 16px;
+    background-color: #885df1;
+    color: white;
+    border: none;
+    padding: 10px 20px; /* Adjust padding as needed */
+    margin-left: 5px;
+    line-height: 1;
+    border-radius: 5px;
+  }
 }
 
 .current-weather {
@@ -60,6 +124,7 @@ main {
   font-weight: 900;
   margin: 0;
 }
+
 .current-details {
   color: rgba(39, 33, 66, 0.4);
   font-size: 16px;
@@ -88,7 +153,7 @@ main {
 }
 
 .current-temperature-unit {
-  font-size: 28px;
+  font-size: 20px;
   position: relative;
   top: -38px;
 }
@@ -101,6 +166,5 @@ footer {
   border-top: 1px solid #f9f7fe;
   text-align: center;
   padding-top: 15px;
-
   color: rgba(39, 33, 66, 0.4);
 }

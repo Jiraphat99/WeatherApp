@@ -10,27 +10,49 @@
       rel="stylesheet"
     />
     <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      integrity="sha512-3w6NTlNM27ZKbfxCcBp1C30V8jDD3LSzIscVROyyIzO2GVnUTQW3OcHLUZfX+cZ3S3w0o5vGgi3eLd4h7BOZ5A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="style.css" />
     <title>My weather application</title>
   </head>
   <body>
     <div class="weather-app">
       <header>
-        <form id="search-form">
-          <input
-            type="search"
-            placeholder="Enter a city.."
-            required
-            class="search-input"
-            id="search-input"
-          />
-          <input type="submit" value="Search" class="search-button" />
-        </form>
+        <!-- Search form and temperature buttons container -->
+        <div class="header-content">
+          <!-- Weather form -->
+          <form class="search-form">
+            <input
+              type="search"
+              placeholder="Enter a city.."
+              required
+              class="search-input"
+              id="search-input"
+            />
+            <button type="submit" class="search-button">Search</button>
+          </form>
+
+          <!-- Temperature unit buttons -->
+          <div class="temperature-buttons">
+            <button class="temperature-button" onclick="changeToCelsius()">
+              °C
+            </button>
+            <button class="temperature-button" onclick="changeToFahrenheit()">
+              °F
+            </button>
+          </div>
+        </div>
       </header>
       <main>
         <div class="current-weather">
           <div>
-            <h1 class="current-city" id="current-city">Paris</h1>
+            <h1 class="current-city" id="current-city">Amsterdam</h1>
             <div class="current-details">
               <span id="current-date"></span>
             </div>
@@ -71,6 +93,6 @@
         </p>
       </footer>
     </div>
+    <script src="javascript.js"></script>
   </body>
-  <script src="javascript.js"></script>
 </html>
