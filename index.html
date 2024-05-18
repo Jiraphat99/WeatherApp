@@ -10,7 +10,10 @@
       rel="stylesheet"
     />
     <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
-
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
@@ -24,10 +27,8 @@
   <body>
     <div class="weather-app">
       <header>
-        <!-- Search form and temperature buttons container -->
-        <div class="header-content">
-          <!-- Weather form -->
-          <form class="search-form">
+        <div class="search-container">
+          <form id="search-form" class="search-form">
             <input
               type="search"
               placeholder="Enter a city.."
@@ -35,17 +36,25 @@
               class="search-input"
               id="search-input"
             />
-            <button type="submit" class="search-button">Search</button>
+            <input type="submit" value="Search" class="search-button" />
           </form>
-
-          <!-- Temperature unit buttons -->
-          <div class="temperature-buttons">
-            <button class="temperature-button" onclick="changeToCelsius()">
-              °C
-            </button>
-            <button class="temperature-button" onclick="changeToFahrenheit()">
-              °F
-            </button>
+          <div class="searchBarheader">
+            <div class="location-buttons">
+              <button
+                class="your-location"
+                aria-label="Use your current location"
+              >
+                <i class="fas fa-map-marker-alt"></i>
+              </button>
+            </div>
+            <div class="unit-buttons">
+              <button class="change-unit" aria-label="Change to Celsius">
+                °C
+              </button>
+              <button class="change-unit" aria-label="Change to Fahrenheit">
+                °F
+              </button>
+            </div>
           </div>
         </div>
       </header>
