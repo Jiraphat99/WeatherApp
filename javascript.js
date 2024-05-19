@@ -4,6 +4,7 @@ function displayTemperature(response) {
   let cityElement = document.querySelector("#current-city");
   cityElement.innerHTML = response.data.city;
   temperatureElement.innerHTML = temperature;
+  hideLoadingScreen(); // Hide the loading screen once data is loaded
 }
 
 function search(event) {
@@ -11,12 +12,11 @@ function search(event) {
   let searchInputElement = document.querySelector("#search-input");
   let city = searchInputElement.value;
 
-  let apiKey = "097tobe889c8b3ef74487a6e720a70b1";
+  let apiKey = "b2a5adcct04b33178913oc335f405433";
   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
 
+  showLoadingScreen(); // Show the loading screen before fetching data
   axios.get(apiUrl).then(displayTemperature);
-
-  console.log(response.data);
 }
 
 function formatDate(date) {
@@ -33,7 +33,7 @@ function formatDate(date) {
 
   let period = hours >= 12 ? "PM" : "AM";
   hours = hours % 12;
-  hours = hours ? hours : 12;
+  hours = hours ? hours : 12; // The hour '0' should be '12'
 
   let months = [
     "January",
@@ -65,6 +65,16 @@ function formatDate(date) {
   return `${formattedDayOfWeek}, ${dayOfMonth} ${formattedMonth} ${year} ${hours}:${minutes} ${period}`;
 }
 
+function showLoadingScreen() {
+  document.getElementById("loading-screen").style.display = "flex";
+  document.querySelector(".weather-app").style.display = "none";
+}
+
+function hideLoadingScreen() {
+  document.getElementById("loading-screen").style.display = "none";
+  document.querySelector(".weather-app").style.display = "block";
+}
+
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", search);
 
@@ -72,3 +82,11 @@ let currentDateElement = document.querySelector("#current-date");
 let currentDate = new Date();
 
 currentDateElement.innerHTML = formatDate(currentDate);
+
+// Initial loading screen display
+showLoadingScreen();
+axios
+  .get(
+    `https://api.shecodes.io/weather/v1/current?query=Amsterdam&key=b2a5adcct04b33178913oc335f405433&units=metric`
+  )
+  .then(displayTemperature);
