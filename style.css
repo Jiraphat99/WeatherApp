@@ -187,9 +187,9 @@ main {
 }
 
 .current-temperature-unit {
-  font-size: 20px;
+  font-size: 60px;
   position: relative;
-  top: -38px;
+  top: -0px;
 }
 
 .currentSky {
