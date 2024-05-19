@@ -20,15 +20,33 @@ function search(event) {
 function formatDate(date) {
   let minutes = date.getMinutes();
   let hours = date.getHours();
-  let day = date.getDay();
+  let dayOfMonth = date.getDate();
+  let month = date.getMonth();
+  let year = date.getFullYear();
+  let dayOfWeek = date.getDay();
 
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
 
-  if (hours < 10) {
-    hours = `0${hours}`;
-  }
+  let period = hours >= 12 ? "PM" : "AM";
+  hours = hours % 12;
+  hours = hours ? hours : 12;
+
+  let months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
 
   let days = [
     "Sunday",
@@ -40,14 +58,15 @@ function formatDate(date) {
     "Saturday",
   ];
 
-  let formattedDay = days[day];
-  return `${formattedDay} ${hours}:${minutes}`;
+  let formattedMonth = months[month];
+  let formattedDayOfWeek = days[dayOfWeek];
+  return `${formattedDayOfWeek}, ${dayOfMonth} ${formattedMonth} ${year} ${hours}:${minutes} ${period}`;
 }
 
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", search);
 
-let currentDateELement = document.querySelector("#current-date");
+let currentDateElement = document.querySelector("#current-date");
 let currentDate = new Date();
 
-currentDateELement.innerHTML = formatDate(currentDate);
+currentDateElement.innerHTML = formatDate(currentDate);

@@ -64,7 +64,7 @@ header {
 }
 
 .searchBarheader {
-  margin-left: 50px;
+  margin-left: 0px;
   display: flex;
   gap: 10px;
 }
