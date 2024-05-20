@@ -1,10 +1,22 @@
 function displayTemperature(response) {
   let temperatureElement = document.querySelector("#current-temperature");
-  let temperature = Math.round(response.data.temperature.current);
   let cityElement = document.querySelector("#current-city");
-  cityElement.innerHTML = response.data.city;
-  temperatureElement.innerHTML = temperature;
+  let alertElement = document.getElementById("alert");
+
+  if (response.data && response.data.city) {
+    let temperature = Math.round(response.data.temperature.current);
+    cityElement.innerHTML = response.data.city;
+    temperatureElement.innerHTML = temperature;
+    alertElement.style.display = "none"; // Hide alert if location is found
+  } else {
+    showAlert();
+  }
   hideLoadingScreen(); // Hide the loading screen once data is loaded
+}
+
+function showAlert() {
+  let alertElement = document.getElementById("alert");
+  alertElement.style.display = "block";
 }
 
 function search(event) {
@@ -16,7 +28,7 @@ function search(event) {
   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
 
   showLoadingScreen(); // Show the loading screen before fetching data
-  axios.get(apiUrl).then(displayTemperature);
+  axios.get(apiUrl).then(displayTemperature).catch(showAlert);
 }
 
 function formatDate(date) {
@@ -89,4 +101,5 @@ axios
   .get(
     `https://api.shecodes.io/weather/v1/current?query=Amsterdam&key=b2a5adcct04b33178913oc335f405433&units=metric`
   )
-  .then(displayTemperature);
+  .then(displayTemperature)
+  .catch(showAlert);
