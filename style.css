@@ -95,7 +95,7 @@ body {
   border-radius: 5px;
   padding: 0.7rem 1rem;
   font-family: inherit;
-  color: #fff;
+  color: #37474f;
   font-size: 1rem;
 }
 
@@ -156,7 +156,7 @@ body {
   object-fit: cover;
 }
 
-.icons {
+.weather-icon {
   opacity: 1;
 }
 

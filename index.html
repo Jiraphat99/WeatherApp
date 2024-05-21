@@ -13,19 +13,20 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
     <link rel="stylesheet" href="style.css" />
     <title>WeatherApp</title>
   </head>
   <body>
     <div class="weatherApp">
       <div class="wrapper">
-        <div class="img_section">
+        <div class="currentCity-section">
           <div class="default_info">
-            <h2 class="currentDayoftheWeek" id="currentDayoftheWeek">Sunday</h2>
+            <h2 class="current-city" id="current-city">Amsterdam</h2>
             <span class="current-date" id="current-date"
               >18 September 2023 10:56 PM</span
             >
-            <div class="icons">
+            <div class="weather-icon">
               <img
                 id="weather-icon"
                 src="https://openweathermap.org/img/wn/10d@2x.png"
@@ -38,12 +39,12 @@
         <div class="content_section">
           <form id="search-form">
             <input
-              type="text"
+              type="search"
               placeholder="Search Location"
               class="search-input"
               id="search-input"
             />
-            <button type="submit" class="btn_search">Search</button>
+            <button type="submit" id="submit">Search</button>
           </form>
 
           <div id="alert" class="alert" style="display: none">
@@ -52,16 +53,18 @@
 
           <div class="day_info">
             <div class="content">
-              <p class="title">NAME</p>
-              <span class="current-city" id="current-city">United Kingdom</span>
-            </div>
-            <div class="content">
-              <p class="title">TEMP</p>
-              <span class="value">23°C</span>
+              <p class="title">COUNTRY</p>
+              <span class="currentCountry" id="currentCountry"
+                >The Netherlands</span
+              >
             </div>
             <div class="content">
               <p class="title">HUMIDITY</p>
               <span class="value">2%</span>
+            </div>
+            <div class="content">
+              <p class="title">RAINY</p>
+              <span class="value">80%</span>
             </div>
             <div class="content">
               <p class="title">WIND SPEED</p>
