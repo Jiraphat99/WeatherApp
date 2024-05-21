@@ -26,7 +26,10 @@
               >18 September 2023 10:56 PM</span
             >
             <div class="icons">
-              <img src="https://openweathermap.org/img/wn/10d@2x.png" />
+              <img
+                id="weather-icon"
+                src="https://openweathermap.org/img/wn/10d@2x.png"
+              />
               <h2 class="current-temperature" id="current-temperature">22°C</h2>
               <h3 class="currentSky" id="currentSky">Overcast Clouds</h3>
             </div>
@@ -42,6 +45,10 @@
             />
             <button type="submit" class="btn_search">Search</button>
           </form>
+
+          <div id="alert" class="alert" style="display: none">
+            Location not found. Please try again.
+          </div>
 
           <div class="day_info">
             <div class="content">
@@ -87,7 +94,7 @@
             </ul>
             <footer>
               <p>
-                Developed by
+                This project was coded by
                 <a href="https://github.com/Jiraphat99" target="_blank"
                   >Jirapat Wonganan</a
                 >

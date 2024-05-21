@@ -30,7 +30,7 @@ body {
   grid-gap: 1rem;
 }
 
-.img_section {
+.currentCity-section {
   border-radius: 25px;
   background-image: url("../img/bg.jpg");
   background-position: center;
@@ -40,7 +40,7 @@ body {
   transform: scale(1.03) perspective(200px);
 }
 
-.img_section::before {
+.currentCity-section::before {
   content: "";
   position: absolute;
   width: 100%;

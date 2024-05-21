@@ -2,13 +2,17 @@ function displayTemperature(response) {
   let temperatureElement = document.querySelector("#current-temperature");
   let cityElement = document.querySelector("#current-city");
   let skyElement = document.querySelector("#currentSky");
+  let weatherIconElement = document.querySelector("#weather-icon");
   let alertElement = document.getElementById("alert");
+
+  console.log(response.data); // Log the response data for debugging
 
   if (response.data && response.data.city) {
     let temperature = Math.round(response.data.temperature.current);
     cityElement.innerHTML = response.data.city;
     temperatureElement.innerHTML = `${temperature}°C`;
     skyElement.innerHTML = response.data.condition.description;
+    weatherIconElement.src = `https://openweathermap.org/img/wn/${response.data.condition.icon}@2x.png`;
     alertElement.style.display = "none"; // Hide alert if location is found
   } else {
     showAlert();
@@ -39,6 +43,7 @@ function formatDate(date) {
   let dayOfMonth = date.getDate();
   let month = date.getMonth();
   let year = date.getFullYear();
+  let dayOfWeek = date.getDay();
 
   if (minutes < 10) {
     minutes = `0${minutes}`;
@@ -63,9 +68,19 @@ function formatDate(date) {
     "December",
   ];
 
-  let formattedMonth = months[month];
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
 
-  return `${dayOfMonth} ${formattedMonth} ${year} ${hours}:${minutes} ${period}`;
+  let formattedMonth = months[month];
+  let formattedDayOfWeek = days[dayOfWeek];
+  return `${formattedDayOfWeek}, ${dayOfMonth} ${formattedMonth} ${year} ${hours}:${minutes} ${period}`;
 }
 
 function updateDateTime() {
