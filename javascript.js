@@ -1,12 +1,14 @@
 function displayTemperature(response) {
   let temperatureElement = document.querySelector("#current-temperature");
   let cityElement = document.querySelector("#current-city");
+  let skyElement = document.querySelector("#currentSky");
   let alertElement = document.getElementById("alert");
 
   if (response.data && response.data.city) {
     let temperature = Math.round(response.data.temperature.current);
     cityElement.innerHTML = response.data.city;
-    temperatureElement.innerHTML = temperature;
+    temperatureElement.innerHTML = `${temperature}°C`;
+    skyElement.innerHTML = response.data.condition.description;
     alertElement.style.display = "none"; // Hide alert if location is found
   } else {
     showAlert();
@@ -24,7 +26,7 @@ function search(event) {
   let searchInputElement = document.querySelector("#search-input");
   let city = searchInputElement.value;
 
-  let apiKey = "097tobe889c8b3ef74487a6e720a70b1";
+  let apiKey = "b2a5adcct04b33178913oc335f405433";
   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
 
   showLoadingScreen(); // Show the loading screen before fetching data
@@ -37,7 +39,6 @@ function formatDate(date) {
   let dayOfMonth = date.getDate();
   let month = date.getMonth();
   let year = date.getFullYear();
-  let dayOfWeek = date.getDay();
 
   if (minutes < 10) {
     minutes = `0${minutes}`;
@@ -62,6 +63,17 @@ function formatDate(date) {
     "December",
   ];
 
+  let formattedMonth = months[month];
+
+  return `${dayOfMonth} ${formattedMonth} ${year} ${hours}:${minutes} ${period}`;
+}
+
+function updateDateTime() {
+  let currentDateElement = document.querySelector("#current-date");
+  let currentDayElement = document.querySelector("#currentDayoftheWeek");
+  let currentDate = new Date();
+  currentDateElement.innerHTML = formatDate(currentDate);
+
   let days = [
     "Sunday",
     "Monday",
@@ -71,29 +83,25 @@ function formatDate(date) {
     "Friday",
     "Saturday",
   ];
-
-  let formattedMonth = months[month];
-  let formattedDayOfWeek = days[dayOfWeek];
-  return `${formattedDayOfWeek}, ${dayOfMonth} ${formattedMonth} ${year} ${hours}:${minutes} ${period}`;
+  currentDayElement.innerHTML = days[currentDate.getDay()];
 }
 
 function showLoadingScreen() {
   document.getElementById("loading-screen").style.display = "flex";
-  document.querySelector(".weather-app").style.display = "none";
+  document.querySelector(".weatherApp").style.display = "none";
 }
 
 function hideLoadingScreen() {
   document.getElementById("loading-screen").style.display = "none";
-  document.querySelector(".weather-app").style.display = "block";
+  document.querySelector(".weatherApp").style.display = "block";
 }
 
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", search);
 
-let currentDateElement = document.querySelector("#current-date");
-let currentDate = new Date();
-
-currentDateElement.innerHTML = formatDate(currentDate);
+// Update the date and time every minute
+updateDateTime();
+setInterval(updateDateTime, 60000);
 
 // Initial loading screen display
 showLoadingScreen();

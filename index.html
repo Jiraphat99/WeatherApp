@@ -1,5 +1,3 @@
-<!-- Developed by Jira | WeatherApp V.001 Updated 19/05/24 -->
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -8,10 +6,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
-    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
@@ -20,88 +17,97 @@
     <title>WeatherApp</title>
   </head>
   <body>
-    <div id="loading-screen" class="loading-screen">
-      <div class="spinner"></div>
-      <p>Loading...</p>
-    </div>
-    <div class="weather-app">
-      <div id="alert" class="alert" style="display: none">
-        Location not found. Please try again.
-      </div>
-      <header>
-        <div class="search-container">
-          <form id="search-form" class="search-form">
+    <div class="weatherApp">
+      <div class="wrapper">
+        <div class="img_section">
+          <div class="default_info">
+            <h2 class="currentDayoftheWeek" id="currentDayoftheWeek">Sunday</h2>
+            <span class="current-date" id="current-date"
+              >18 September 2023 10:56 PM</span
+            >
+            <div class="icons">
+              <img src="https://openweathermap.org/img/wn/10d@2x.png" />
+              <h2 class="current-temperature" id="current-temperature">22°C</h2>
+              <h3 class="currentSky" id="currentSky">Overcast Clouds</h3>
+            </div>
+          </div>
+        </div>
+        <div class="content_section">
+          <form id="search-form">
             <input
-              type="search"
-              placeholder="Enter a city.."
-              required
+              type="text"
+              placeholder="Search Location"
               class="search-input"
               id="search-input"
             />
-            <input type="submit" value="Search" class="search-button" />
+            <button type="submit" class="btn_search">Search</button>
           </form>
-          <div class="searchBarheader">
-            <div class="location-buttons">
-              <button
-                class="your-location"
-                aria-label="Use your current location"
-              >
-                <i class="fas fa-map-marker-alt"></i>
-              </button>
+
+          <div class="day_info">
+            <div class="content">
+              <p class="title">NAME</p>
+              <span class="current-city" id="current-city">United Kingdom</span>
             </div>
-            <div class="unit-buttons">
-              <button class="change-unit" aria-label="Change to Celsius">
-                °C
-              </button>
-              <button class="change-unit" aria-label="Change to Fahrenheit">
-                °F
-              </button>
+            <div class="content">
+              <p class="title">TEMP</p>
+              <span class="value">23°C</span>
             </div>
+            <div class="content">
+              <p class="title">HUMIDITY</p>
+              <span class="value">2%</span>
+            </div>
+            <div class="content">
+              <p class="title">WIND SPEED</p>
+              <span class="value">2.92 Km/h</span>
+            </div>
+          </div>
+
+          <div class="list_content">
+            <ul>
+              <li>
+                <img src="https://openweathermap.org/img/wn/10d@2x.png" />
+                <span>Sat</span>
+                <span class="day_temp">23°C</span>
+              </li>
+              <li>
+                <img src="https://openweathermap.org/img/wn/10d@2x.png" />
+                <span>Sat</span>
+                <span class="day_temp">23°C</span>
+              </li>
+              <li>
+                <img src="https://openweathermap.org/img/wn/10d@2x.png" />
+                <span>Sat</span>
+                <span class="day_temp">23°C</span>
+              </li>
+              <li>
+                <img src="https://openweathermap.org/img/wn/10d@2x.png" />
+                <span>Sat</span>
+                <span class="day_temp">23°C</span>
+              </li>
+            </ul>
+            <footer>
+              <p>
+                Developed by
+                <a href="https://github.com/Jiraphat99" target="_blank"
+                  >Jirapat Wonganan</a
+                >
+                and is
+                <a
+                  href="https://github.com/Jiraphat99/WeatherApp"
+                  target="_blank"
+                  >on GitHub</a
+                >
+                and
+                <a
+                  href="https://fantastic-panda-8233a5.netlify.app/"
+                  target="_blank"
+                  >hosted on Netlify</a
+                >
+              </p>
+            </footer>
           </div>
         </div>
-      </header>
-      <main>
-        <div class="current-weather">
-          <div>
-            <h1 class="current-city" id="current-city"></h1>
-            <div class="current-details">
-              <span id="current-date"></span>
-            </div>
-            <br />
-            <div class="current-details">
-              <div id="current-humidity">Humidity: <strong>87%</strong></div>
-              <div id="current-wind">Wind: <strong>7.2 km/h</strong></div>
-              <div id="current-rain">Rain: <strong>60%</strong></div>
-              <div>Cloudiness: <strong>75%</strong></div>
-            </div>
-          </div>
-          <div class="current-temperature">
-            <span class="current-temperature-icon">☀️</span
-            ><span
-              class="current-temperature-value"
-              id="current-temperature"
-            ></span
-            ><span class="currenteratu-tempre-unit">°C</span>
-            <div class="currentSky" id="currentSky">Moderate rain</div>
-          </div>
-        </div>
-      </main>
-      <footer>
-        <p>
-          This project was coded by
-          <a href="https://github.com/Jiraphat99" target="_blank"
-            >Jirapat Wonganan</a
-          >
-          and is
-          <a href="https://github.com/Jiraphat99/WeatherApp" target="_blank">
-            on GitHub</a
-          >
-          and
-          <a href="https://fantastic-panda-8233a5.netlify.app/" target="_blank"
-            >hosted on Netlify</a
-          >
-        </p>
-      </footer>
+      </div>
     </div>
     <script src="javascript.js"></script>
   </body>
