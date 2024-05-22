@@ -5,14 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-    />
     <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
     <link rel="stylesheet" href="style.css" />
     <title>WeatherApp</title>
@@ -31,7 +23,7 @@
                 id="weather-icon"
                 src="https://openweathermap.org/img/wn/10d@2x.png"
               />
-              <h2 class="current-temperature" id="current-temperature">22°C</h2>
+              <h2 class="currentTemperature" id="currentTemperature">22°C</h2>
               <h3 class="currentSky" id="currentSky">Overcast Clouds</h3>
             </div>
           </div>
@@ -46,11 +38,9 @@
             />
             <button type="submit" id="submit">Search</button>
           </form>
-
           <div id="alert" class="alert" style="display: none">
             Location not found. Please try again.
           </div>
-
           <div class="day_info">
             <div class="content">
               <p class="title">COUNTRY</p>
