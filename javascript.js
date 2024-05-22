@@ -58,6 +58,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const currentTemperature = document.getElementById("currentTemperature");
   const currentSky = document.getElementById("currentSky");
   const currentCountry = document.getElementById("currentCountry");
+  const humidity = document.getElementById("humidity");
+  const windSpeed = document.getElementById("wind-speed");
+  const conditionDescription = document.getElementById("condition-description");
+  const rainy = document.getElementById("rainy");
 
   const apiKey = "097tobe889c8b3ef74487a6e720a70b1";
 
@@ -92,5 +96,9 @@ document.addEventListener("DOMContentLoaded", () => {
       data.temperature.current
     )}°C`;
     currentSky.textContent = data.condition.description;
+    humidity.textContent = `${data.temperature.humidity}%`;
+    windSpeed.textContent = `${data.wind.speed} Km/h`;
+    conditionDescription.textContent = data.condition.description;
+    rainy.textContent = `${data.temperature.feels_like}%`; // Assuming rainy value needs to be updated
   }
 });

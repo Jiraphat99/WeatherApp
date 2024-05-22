@@ -3,8 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
     <link rel="stylesheet" href="style.css" />
     <title>WeatherApp</title>
@@ -50,18 +48,23 @@
             </div>
             <div class="content">
               <p class="title">HUMIDITY</p>
-              <span class="value">2%</span>
+              <span class="value" id="humidity">2%</span>
             </div>
             <div class="content">
               <p class="title">RAINY</p>
-              <span class="value">80%</span>
+              <span class="value" id="rainy">80%</span>
             </div>
             <div class="content">
               <p class="title">WIND SPEED</p>
-              <span class="value">2.92 Km/h</span>
+              <span class="value" id="wind-speed">2.92 Km/h</span>
+            </div>
+            <div class="content">
+              <p class="title">DESCRIPTION</p>
+              <span class="value" id="condition-description"
+                >Overcast Clouds</span
+              >
             </div>
           </div>
-
           <div class="list_content">
             <ul>
               <li>

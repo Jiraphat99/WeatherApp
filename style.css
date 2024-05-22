@@ -63,7 +63,11 @@ body {
 }
 
 .default_info h2 {
-  font-size: 3rem;
+  font-size: 30px;
+}
+
+.currentTemperature {
+  margin-top: 70px;
 }
 
 .default_info h3 {
