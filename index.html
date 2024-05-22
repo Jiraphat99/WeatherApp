@@ -11,6 +11,10 @@
     <div class="weatherApp">
       <div class="wrapper">
         <div class="currentCity-section">
+          <video autoplay muted loop id="city-video" class="background-video">
+            <source src="your-video-file.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
           <div class="default_info">
             <h2 class="current-city" id="current-city">Amsterdam</h2>
             <span class="current-date" id="current-date"
@@ -36,7 +40,7 @@
             />
             <button type="submit" id="submit">Search</button>
           </form>
-          <div id="alert" class="alert" style="display: none">
+          <div id="alert" class="alert hidden">
             Location not found. Please try again.
           </div>
           <div class="day_info">
@@ -57,12 +61,6 @@
             <div class="content">
               <p class="title">WIND SPEED</p>
               <span class="value" id="wind-speed">2.92 Km/h</span>
-            </div>
-            <div class="content">
-              <p class="title">DESCRIPTION</p>
-              <span class="value" id="condition-description"
-                >Overcast Clouds</span
-              >
             </div>
           </div>
           <div class="list_content">

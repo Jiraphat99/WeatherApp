@@ -12,7 +12,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: "poppins", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .weatherApp {
@@ -32,26 +32,24 @@ body {
 
 .currentCity-section {
   border-radius: 25px;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
   position: relative;
+  overflow: hidden;
   transform: scale(1.03) perspective(200px);
 }
 
-.currentCity-section::before {
-  content: "";
+.background-video {
   position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  background: #fff;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
-  opacity: 1;
+  object-fit: cover;
   z-index: -1;
-  border-radius: 25px;
 }
 
 .default_info {
+  position: relative;
+  z-index: 1;
   padding: 1.5rem;
   text-align: center;
 }
@@ -113,7 +111,7 @@ body {
   font-size: 0.8rem;
   outline: none;
   border: none;
-  background: #5c6bc0;
+  background: #f9a5cf;
   color: #fff;
   cursor: pointer;
 }
@@ -177,4 +175,8 @@ body {
 
 footer {
   font-size: 12px;
+}
+
+.hidden {
+  display: none;
 }

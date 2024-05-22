@@ -60,20 +60,29 @@ document.addEventListener("DOMContentLoaded", () => {
   const currentCountry = document.getElementById("currentCountry");
   const humidity = document.getElementById("humidity");
   const windSpeed = document.getElementById("wind-speed");
-  const conditionDescription = document.getElementById("condition-description");
   const rainy = document.getElementById("rainy");
+  const weatherApp = document.querySelector(".weatherApp");
+  const defaultInfo = document.querySelector(".default_info");
+  const dayInfo = document.querySelector(".day_info");
+  const listContent = document.querySelector(".list_content");
 
   const apiKey = "097tobe889c8b3ef74487a6e720a70b1";
+
+  // Hide weather information elements initially
+  weatherApp.style.visibility = "visible";
+  defaultInfo.classList.add("hidden");
+  dayInfo.classList.add("hidden");
+  listContent.classList.add("hidden");
 
   form.addEventListener("submit", (e) => {
     e.preventDefault();
     const city = searchInput.value.trim();
     if (city) {
-      getWeather(city);
+      getWeatherByCity(city);
     }
   });
 
-  function getWeather(city) {
+  function getWeatherByCity(city) {
     const apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
     axios
       .get(apiUrl)
@@ -83,7 +92,26 @@ document.addEventListener("DOMContentLoaded", () => {
       })
       .catch((error) => {
         console.error(error);
+        alert.textContent = "Location not found. Please try again.";
         alert.style.display = "block";
+        hideWeatherInfo();
+      });
+  }
+
+  function getWeatherByCoords(lat, lon) {
+    const apiUrl = `https://api.shecodes.io/weather/v1/current?lat=${lat}&lon=${lon}&key=${apiKey}&units=metric`;
+    axios
+      .get(apiUrl)
+      .then((response) => {
+        updateWeatherInfo(response.data);
+        alert.style.display = "none";
+      })
+      .catch((error) => {
+        console.error(error);
+        alert.textContent =
+          "Unable to retrieve weather data. Please search for your city manually.";
+        alert.style.display = "block";
+        hideWeatherInfo();
       });
   }
 
@@ -98,7 +126,45 @@ document.addEventListener("DOMContentLoaded", () => {
     currentSky.textContent = data.condition.description;
     humidity.textContent = `${data.temperature.humidity}%`;
     windSpeed.textContent = `${data.wind.speed} Km/h`;
-    conditionDescription.textContent = data.condition.description;
     rainy.textContent = `${data.temperature.feels_like}%`; // Assuming rainy value needs to be updated
+
+    // Show weather information elements
+    defaultInfo.classList.remove("hidden");
+    dayInfo.classList.remove("hidden");
+    listContent.classList.remove("hidden");
   }
+
+  function hideWeatherInfo() {
+    // Hide weather information elements
+    defaultInfo.classList.add("hidden");
+    dayInfo.classList.add("hidden");
+    listContent.classList.add("hidden");
+  }
+
+  function getUserLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const lat = position.coords.latitude;
+          const lon = position.coords.longitude;
+          getWeatherByCoords(lat, lon);
+        },
+        (error) => {
+          console.error(error);
+          alert.textContent =
+            "Location access denied. Please search for your city manually.";
+          alert.style.display = "block";
+          hideWeatherInfo();
+        }
+      );
+    } else {
+      alert.textContent =
+        "Geolocation not supported. Please search for your city manually.";
+      alert.style.display = "block";
+      hideWeatherInfo();
+    }
+  }
+
+  // Fetch weather data based on user's location when the page loads
+  getUserLocation();
 });
