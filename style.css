@@ -22,12 +22,15 @@ body {
   color: #222222;
   border-radius: 25px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+  display: flex;
+  flex-direction: column;
 }
 
 .wrapper {
   display: grid;
   grid-template-columns: 3fr 4fr;
   grid-gap: 1rem;
+  flex-grow: 1; /* Allow the wrapper to grow and take up available space */
 }
 
 .currentCity-section {
@@ -65,7 +68,7 @@ body {
 }
 
 .currentTemperature {
-  margin-top: 70px;
+  margin: 0; /* Adjusted for better alignment */
 }
 
 .default_info h3 {
@@ -78,7 +81,34 @@ body {
   font-weight: 800;
 }
 
-/* content section */
+.weather-icons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.WeatherIcon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1.5rem; /* Adjusted margin for spacing */
+}
+
+.WeatherIcon-container img {
+  width: 50px; /* Set desired width */
+  height: 50px; /* Set desired height */
+  margin-right: 10px; /* Space between icon and temperature */
+}
+
+.currentTemperature {
+  font-size: 2rem; /* Adjust font size if necessary */
+}
+
+.currentSky {
+  font-size: 1.3rem; /* Adjust font size if necessary */
+  text-transform: capitalize;
+}
+
 .content_section {
   padding: 1.5rem;
 }
@@ -153,12 +183,8 @@ body {
 }
 
 .list_content ul li img {
-  width: 50%;
+  width: 30%; /* Adjusted size */
   object-fit: cover;
-}
-
-.weather-icon {
-  opacity: 1;
 }
 
 .icons.fadeIn {
