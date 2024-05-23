@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const currentCountry = document.getElementById("currentCountry");
   const humidity = document.getElementById("humidity");
   const windSpeed = document.getElementById("wind-speed");
-  const rainy = document.getElementById("rainy");
+  const feelLike = document.getElementById("feelLike");
   const weatherApp = document.querySelector(".weatherApp");
   const defaultInfo = document.querySelector(".currentCity-section");
   const dayInfo = document.querySelector(".day_info");
@@ -126,7 +126,7 @@ document.addEventListener("DOMContentLoaded", () => {
     currentSky.textContent = data.condition.description;
     humidity.textContent = `${data.temperature.humidity}%`;
     windSpeed.textContent = `${data.wind.speed} Km/h`;
-    rainy.textContent = `${data.temperature.feels_like}%`; // Assuming rainy value needs to be updated
+    feelLike.textContent = `${data.temperature.feels_like}%`; // Assuming rainy value needs to be updated
 
     // Show weather information elements
     defaultInfo.classList.remove("hidden");
