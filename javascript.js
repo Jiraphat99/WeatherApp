@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const windSpeed = document.getElementById("wind-speed");
   const rainy = document.getElementById("rainy");
   const weatherApp = document.querySelector(".weatherApp");
-  const defaultInfo = document.querySelector(".default_info");
+  const defaultInfo = document.querySelector(".currentCity-section");
   const dayInfo = document.querySelector(".day_info");
   const listContent = document.querySelector(".list_content");
 

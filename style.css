@@ -7,7 +7,7 @@
 }
 
 body {
-  background-color: #eef2ed;
+  background-color: #f5eff2;
   height: 100vh;
   display: flex;
   align-items: center;
@@ -16,7 +16,7 @@ body {
 }
 
 .weatherApp {
-  max-width: 800px;
+  max-width: 1000px;
   width: 100%;
   background-color: #ffffff;
   color: #222222;
@@ -28,50 +28,59 @@ body {
 
 .wrapper {
   display: grid;
-  grid-template-columns: 3fr 4fr;
+  grid-template-columns: 5fr 4fr;
   grid-gap: 1rem;
-  flex-grow: 1; /* Allow the wrapper to grow and take up available space */
+  flex-grow: 1;
 }
 
 .currentCity-section {
+  position: relative;
   border-radius: 25px;
-  position: relative;
-  overflow: hidden;
-  transform: scale(1.03) perspective(200px);
-}
-
-.background-video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -1;
-}
-
-.default_info {
-  position: relative;
-  z-index: 1;
+  background-position: center;
+  background-size: cover;
   padding: 1.5rem;
   text-align: center;
 }
 
-.default_info img {
+.currentCity-section::before {
+  content: "";
+  position: absolute;
+  top: -10px; /* Adjust as needed to make the effect more visible */
+  left: -10px; /* Adjust as needed to make the effect more visible */
+  width: calc(
+    100% + 20px
+  ); /* Adjust as needed to make the effect more visible */
+  height: calc(
+    100% + 20px
+  ); /* Adjust as needed to make the effect more visible */
+  background: #fff;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+  opacity: 1;
+  z-index: 1;
+  border-radius: 35px; /* Adjust as needed to make the effect more visible */
+}
+
+.currentWeather-illustration {
+  width: 80%;
+  max-width: 400px; /* Adjust as needed */
+  margin: 20px auto;
+}
+
+.currentCity-section img {
   width: 80%;
   object-fit: cover;
   margin: 0 auto;
 }
 
-.default_info h2 {
+.currentCity-section h2 {
   font-size: 30px;
 }
 
 .currentTemperature {
-  margin: 0; /* Adjusted for better alignment */
+  margin: 0;
 }
 
-.default_info h3 {
+.currentCity-section h3 {
   font-size: 1.3rem;
   text-transform: capitalize;
 }
@@ -91,21 +100,21 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 1.5rem; /* Adjusted margin for spacing */
+  margin: 3rem 1.5rem 1rem;
 }
 
 .WeatherIcon-container img {
-  width: 50px; /* Set desired width */
-  height: 50px; /* Set desired height */
-  margin-right: 10px; /* Space between icon and temperature */
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
 }
 
 .currentTemperature {
-  font-size: 2rem; /* Adjust font size if necessary */
+  font-size: 2rem;
 }
 
 .currentSky {
-  font-size: 1.3rem; /* Adjust font size if necessary */
+  font-size: 1.3rem;
   text-transform: capitalize;
 }
 
