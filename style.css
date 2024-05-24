@@ -10,6 +10,7 @@ body {
   background-color: #e3ebfa;
   height: 100vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   font-family: "Poppins", sans-serif;
@@ -19,7 +20,6 @@ body {
   max-width: 1000px;
   width: 100%;
   background: linear-gradient(to bottom right, #abc9fc, #639dfd);
-  color: #222222;
   border-radius: 25px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
   display: flex;
@@ -74,12 +74,20 @@ body {
 }
 
 .currentTemperature {
-  font-size: 70px;
-  margin: 0;
+  font-size: 100px; /* Increased font size */
+  background: linear-gradient(to bottom right, #fff, #abc9fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 600;
+  margin-right: 5px;
 }
 
 .currentTemperature-unit {
-  font-size: 30px;
+  font-size: 40px;
+  background: linear-gradient(to bottom right, #fff, #abc9fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 600;
 }
 
 .currentCountry {
@@ -93,16 +101,7 @@ body {
 
 .temperature-container {
   display: flex;
-  align-items: baseline; /* Ensure proper alignment of the temperature and its unit */
-}
-
-.currentTemperature {
-  font-size: 70px;
-  margin-right: 5px; /* Adjust as needed for spacing between the temperature and unit */
-}
-
-.currentTemperature-unit {
-  font-size: 30px;
+  align-items: baseline;
 }
 
 .weather_temp {
@@ -117,11 +116,10 @@ body {
 }
 
 .weatherIcon-container {
-  color: white;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 3rem 1.5rem 3rem;
+  margin: 3rem 2rem 3rem;
   padding: 20px;
   box-shadow: 0 15px 20px rgb(61, 100, 166, 0);
   background: linear-gradient(to bottom right, #abc9fc, #639dfd);
@@ -129,7 +127,9 @@ body {
 }
 
 .currentSky {
-  font-size: 1.3rem;
+  color: #fff;
+  font-weight: 300;
+  font-size: 20px;
   text-transform: capitalize;
 }
 
@@ -142,73 +142,53 @@ body {
   position: relative;
 }
 
-.content_section form input {
-  width: 84%;
-  outline: none;
-  background: transparent;
-  border: 1px solid #37474f;
-  border-radius: 5px;
-  padding: 0.7rem 1rem;
-  font-family: inherit;
-  color: #37474f;
-  font-size: 1rem;
-}
-
-.content_section form button {
-  position: absolute;
-  top: 0;
-  right: 0;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
-  padding: 1rem 0.7rem;
-  font-family: inherit;
-  font-size: 0.8rem;
-  outline: none;
-  border: none;
-  background: #f9a5cf;
-  color: #fff;
-  cursor: pointer;
-}
-
 .day_info {
   display: flex;
+  justify-content: center;
+  gap: 10px;
 }
 
 .content {
-  width: calc(25% - 10px); /* Adjust the width to make four boxes in a row */
-  height: 100px; /* Set a fixed height for each box */
-  margin-right: 10px; /* Add margin between boxes */
-  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.info {
+  text-align: center;
+  position: absolute;
+  bottom: -30px; /* Adjust this value as needed */
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.content {
+  width: 100px;
+  height: 90px;
+  border-radius: 30px;
   background: #f8f8f9;
   box-shadow: 0 15px 20px rgba(117, 117, 211, 0.4);
-  text-align: center; /* Center the content */
-  padding: 10px; /* Add padding inside the box */
+  text-align: center;
+  padding: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
 .content:last-child {
-  margin-right: 0; /* Remove margin from the last box */
+  margin-right: 0;
 }
 
 .title {
   font-size: 12px;
   font-weight: 600;
-  color: rgb(
-    41,
-    41,
-    41
-  ); /* Ensure title color is visible on the gradient background */
+  color: rgb(41, 41, 41);
 }
 
 .value {
-  margin-top: 5px; /* Add spacing between title and value */
-  color: rgb(
-    41,
-    41,
-    41
-  ); /* Ensure value color is visible on the gradient background */
+  margin-top: 5px;
+  color: rgb(41, 41, 41);
 }
 
 .list_content ul {
@@ -238,30 +218,44 @@ body {
 }
 
 .list_content ul li img {
-  width: 30%; /* Adjusted size */
+  width: 30%;
   object-fit: cover;
-}
-
-.icons.fadeIn {
-  animation: 0.5s fadeIn forwards;
-  animation-delay: 0.7s;
-}
-
-@keyframes fadeIn {
-  to {
-    transition: all 0.5s ease-in;
-    opacity: 1;
-  }
-}
-
-footer {
-  font-size: 12px;
-}
-
-.hidden {
-  display: none;
 }
 
 .pin-icon {
   cursor: pointer;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem 0;
+}
+
+footer p {
+  margin: 0;
+}
+
+footer a {
+  color: #639dfd;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+.season-container {
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 3rem 2rem 3rem;
+  padding: 30px 30px;
+  box-shadow: 0 15px 20px rgb(61, 100, 166, 0.2);
+  background: #abc9fc;
+  border-radius: 20px;
+}
+
+.season-icon {
+  width: 100px;
 }

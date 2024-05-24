@@ -11,9 +11,7 @@
     <div class="weatherApp">
       <div class="wrapper">
         <div class="currentCity-section">
-          <h2 class="current-city" id="current-city">
-            <span id="change-city" class="pin-icon">📌</span>Amsterdam
-          </h2>
+          <h2 class="current-city" id="current-city">Amsterdam</h2>
           <span>
             <div class="currentCountry" id="currentCountry">
               The Netherlands
@@ -22,14 +20,10 @@
           <span class="current-date" id="current-date"
             >18 September 2023 10:56 PM</span
           >
-
           <div class="weather-icons">
             <div class="weatherIcon-container">
               <div class="icon-column">
-                <img
-                  id="weather-icon"
-                  src="https://openweathermap.org/img/wn/10d.png"
-                />
+                <img id="weather-icon" src="src/image/cloudy-day.png" />
                 <h3 class="currentSky" id="currentSky">Overcast Clouds</h3>
               </div>
               <div class="temperature-container">
@@ -37,68 +31,98 @@
                   >22</span
                 >
                 <span class="currentTemperature-unit">°C</span>
+                <div class="currentFeellike">
+                  <div class="feelLike-title">Feel like</div>
+                  <span class="feelLike-value" id="feelLike-value">22</span
+                  ><span class="feeLike-unit" id="feeLike-unit">°C</span>
+                </div>
               </div>
             </div>
           </div>
 
           <div class="day_info">
             <span class="content">
-              <div class="title">HUMIDITY</div>
-              <span class="value" id="humidity">2%</span>
+              <img
+                src="src/image/Humidity.png"
+                alt=""
+                class="currentInfo-icon"
+              />
+              <div class="info">
+                <div class="title">HUMIDITY</div>
+                <span class="value" id="humidity">2%</span>
+              </div>
             </span>
             <span class="content">
-              <div class="title">FEEL LIKE</div>
-              <span class="value" id="feelLike">18</span>
+              <img src="src/image/Wind.png" alt="" class="currentInfo-icon" />
+              <div class="info">
+                <div class="title">FEEL LIKE</div>
+                <span class="value" id="feelLike">18</span>
+              </div>
             </span>
             <span class="content">
-              <div class="title">WIND SPEED</div>
-              <span class="value" id="wind-speed">2.92 Km/h</span>
+              <img src="src/image/Rainy.png" alt="" class="currentInfo-icon" />
+              <div class="info">
+                <div class="title">WIND SPEED</div>
+                <span class="value" id="wind-speed">2.92 Km/h</span>
+              </div>
             </span>
           </div>
         </div>
         <div class="content_section">
-          <div id="alert" class="alert hidden">
-            Location not found. Please try again.
-          </div>
-
           <div class="list_content">
+            <form id="search-form">
+              <input
+                type="search"
+                placeholder="Enter a city.."
+                required
+                class="search-input"
+                id="search-input"
+              />
+              <input type="submit" value="Search" class="search-button" />
+            </form>
+            <div class="season-container">
+              <img
+                class="season-icon"
+                id="season-icon"
+                src="src/image/cloudy-day.png"
+              />
+              <h2 class="season-tile" id="season-tile">SUMMER</h2>
+            </div>
             <div>NEXT 7 DAYS</div>
             <ul>
               <li>
-                <img src="https://openweathermap.org/img/wn/10d@2x.png" />
+                <img id="weather-icon" src="src/image/cloudy-day.png" />
                 <span>Sat</span>
                 <span class="day_temp">23°C</span>
               </li>
               <li>
-                <img src="https://openweathermap.org/img/wn/10d@2x.png" />
+                <img id="forecastweather-icon" src="src/image/cloudy-day.png" />
                 <span>Sat</span>
                 <span class="day_temp">23°C</span>
               </li>
               <li>
-                <img src="https://openweathermap.org/img/wn/10d@2x.png" />
+                <img id="forecastweather-icon" src="src/image/cloudy-day.png" />
                 <span>Sat</span>
                 <span class="day_temp">23°C</span>
               </li>
               <li>
-                <img src="https://openweathermap.org/img/wn/10d@2x.png" />
+                <img id="forecastweather-icon" src="src/image/cloudy-day.png" />
                 <span>Sat</span>
                 <span class="day_temp">23°C</span>
               </li>
             </ul>
-            <footer>
-              <p>
-                Open Source Code by
-                <a
-                  href="https://github.com/Jiraphat99/WeatherApp"
-                  target="_blank"
-                  >Jirapat Wonganan</a
-                >
-              </p>
-            </footer>
           </div>
         </div>
       </div>
     </div>
+    <footer>
+      <p>
+        Open Source Code by
+        <a href="https://github.com/Jiraphat99/WeatherApp" target="_blank"
+          >Jirapat Wonganan</a
+        >
+      </p>
+    </footer>
     <script src="javascript.js"></script>
   </body>
 </html>
