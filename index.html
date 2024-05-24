@@ -11,62 +11,58 @@
     <div class="weatherApp">
       <div class="wrapper">
         <div class="currentCity-section">
-          <h2 class="current-city" id="current-city">Amsterdam</h2>
+          <h2 class="current-city" id="current-city">
+            <span id="change-city" class="pin-icon">📌</span>Amsterdam
+          </h2>
+          <span>
+            <div class="currentCountry" id="currentCountry">
+              The Netherlands
+            </div>
+          </span>
           <span class="current-date" id="current-date"
             >18 September 2023 10:56 PM</span
           >
-          <img
-            class="currentWeather-illustration"
-            id="currentWeather-illustration"
-            src="src/image/windy-day-animate.svg"
-            alt="People illustrations by Storyset"
-          />
+
           <div class="weather-icons">
             <div class="weatherIcon-container">
-              <img
-                id="weather-icon"
-                src="https://openweathermap.org/img/wn/10d.png"
-              />
-              <h2 class="currentTemperature" id="currentTemperature">22°C</h2>
+              <div class="icon-column">
+                <img
+                  id="weather-icon"
+                  src="https://openweathermap.org/img/wn/10d.png"
+                />
+                <h3 class="currentSky" id="currentSky">Overcast Clouds</h3>
+              </div>
+              <div class="temperature-container">
+                <span class="currentTemperature" id="currentTemperature"
+                  >22</span
+                >
+                <span class="currentTemperature-unit">°C</span>
+              </div>
             </div>
-            <h3 class="currentSky" id="currentSky">Overcast Clouds</h3>
+          </div>
+
+          <div class="day_info">
+            <span class="content">
+              <div class="title">HUMIDITY</div>
+              <span class="value" id="humidity">2%</span>
+            </span>
+            <span class="content">
+              <div class="title">FEEL LIKE</div>
+              <span class="value" id="feelLike">18</span>
+            </span>
+            <span class="content">
+              <div class="title">WIND SPEED</div>
+              <span class="value" id="wind-speed">2.92 Km/h</span>
+            </span>
           </div>
         </div>
         <div class="content_section">
-          <form id="search-form">
-            <input
-              type="search"
-              placeholder="Search Location"
-              class="search-input"
-              id="search-input"
-            />
-            <button type="submit" id="submit">Search</button>
-          </form>
           <div id="alert" class="alert hidden">
             Location not found. Please try again.
           </div>
-          <div class="day_info">
-            <div class="content">
-              <p class="title">COUNTRY</p>
-              <span class="currentCountry" id="currentCountry"
-                >The Netherlands</span
-              >
-            </div>
 
-            <div class="content">
-              <p class="title">HUMIDITY</p>
-              <span class="value" id="humidity">2%</span>
-            </div>
-            <div class="content">
-              <p class="title">FEEL LIKE</p>
-              <span class="value" id="feelLike">18</span>
-            </div>
-            <div class="content">
-              <p class="title">WIND SPEED</p>
-              <span class="value" id="wind-speed">2.92 Km/h</span>
-            </div>
-          </div>
           <div class="list_content">
+            <div>NEXT 7 DAYS</div>
             <ul>
               <li>
                 <img src="https://openweathermap.org/img/wn/10d@2x.png" />

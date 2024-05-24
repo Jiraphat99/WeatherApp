@@ -7,7 +7,7 @@
 }
 
 body {
-  background-color: #f5eff2;
+  background-color: #e3ebfa;
   height: 100vh;
   display: flex;
   align-items: center;
@@ -18,7 +18,7 @@ body {
 .weatherApp {
   max-width: 1000px;
   width: 100%;
-  background-color: #ffffff;
+  background: linear-gradient(to bottom right, #abc9fc, #639dfd);
   color: #222222;
   border-radius: 25px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
@@ -69,17 +69,40 @@ body {
   margin: 0 auto;
 }
 
-.currentCity-section h2 {
-  font-size: 30px;
+.current-city {
+  font-size: 40px;
 }
 
 .currentTemperature {
+  font-size: 70px;
   margin: 0;
 }
 
-.currentCity-section h3 {
-  font-size: 1.3rem;
-  text-transform: capitalize;
+.currentTemperature-unit {
+  font-size: 30px;
+}
+
+.currentCountry {
+  font-size: 15px;
+}
+
+.current-date {
+  font-size: 12px;
+  color: #a7a7a7;
+}
+
+.temperature-container {
+  display: flex;
+  align-items: baseline; /* Ensure proper alignment of the temperature and its unit */
+}
+
+.currentTemperature {
+  font-size: 70px;
+  margin-right: 5px; /* Adjust as needed for spacing between the temperature and unit */
+}
+
+.currentTemperature-unit {
+  font-size: 30px;
 }
 
 .weather_temp {
@@ -93,21 +116,16 @@ body {
   align-items: center;
 }
 
-.WeatherIcon-container {
+.weatherIcon-container {
+  color: white;
   display: flex;
-  align-items: center;
   justify-content: center;
-  margin: 3rem 1.5rem 1rem;
-}
-
-.WeatherIcon-container img {
-  width: 50px;
-  height: 50px;
-  margin-right: 10px;
-}
-
-.currentTemperature {
-  font-size: 2rem;
+  align-items: center;
+  margin: 3rem 1.5rem 3rem;
+  padding: 20px;
+  box-shadow: 0 15px 20px rgb(61, 100, 166, 0);
+  background: linear-gradient(to bottom right, #abc9fc, #639dfd);
+  border-radius: 35px;
 }
 
 .currentSky {
@@ -152,14 +170,45 @@ body {
   cursor: pointer;
 }
 
-.day_info .content {
+.day_info {
   display: flex;
-  justify-content: space-between;
-  padding: 0.4rem 0;
 }
 
-.day_info .content .title {
+.content {
+  width: calc(25% - 10px); /* Adjust the width to make four boxes in a row */
+  height: 100px; /* Set a fixed height for each box */
+  margin-right: 10px; /* Add margin between boxes */
+  border-radius: 10px;
+  background: #f8f8f9;
+  box-shadow: 0 15px 20px rgba(117, 117, 211, 0.4);
+  text-align: center; /* Center the content */
+  padding: 10px; /* Add padding inside the box */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.content:last-child {
+  margin-right: 0; /* Remove margin from the last box */
+}
+
+.title {
+  font-size: 12px;
   font-weight: 600;
+  color: rgb(
+    41,
+    41,
+    41
+  ); /* Ensure title color is visible on the gradient background */
+}
+
+.value {
+  margin-top: 5px; /* Add spacing between title and value */
+  color: rgb(
+    41,
+    41,
+    41
+  ); /* Ensure value color is visible on the gradient background */
 }
 
 .list_content ul {
@@ -211,4 +260,8 @@ footer {
 
 .hidden {
   display: none;
+}
+
+.pin-icon {
+  cursor: pointer;
 }
