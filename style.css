@@ -73,8 +73,13 @@ body {
   font-size: 40px;
 }
 
+.currentTemperature-container {
+  display: flex;
+  align-items: baseline;
+}
+
 .currentTemperature {
-  font-size: 100px; /* Increased font size */
+  font-size: 100px;
   background: linear-gradient(to bottom right, #fff, #abc9fc);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -90,29 +95,16 @@ body {
   font-weight: 600;
 }
 
-.currentCountry {
-  font-size: 15px;
+.currentFeellike {
+  text-align: center;
+  margin-top: -30px;
 }
 
-.current-date {
-  font-size: 12px;
-  color: #a7a7a7;
-}
-
-.temperature-container {
-  display: flex;
-  align-items: baseline;
-}
-
-.weather_temp {
-  font-size: 4rem;
-  font-weight: 800;
-}
-
-.weather-icons {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.feelLike-title {
+  display: block;
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff; /* Adjust color as needed */
 }
 
 .weatherIcon-container {
@@ -121,25 +113,36 @@ body {
   align-items: center;
   margin: 3rem 2rem 3rem;
   padding: 20px;
-  box-shadow: 0 15px 20px rgb(61, 100, 166, 0);
+  box-shadow: 0 15px 20px rgba(61, 100, 166, 0.2); /* Adjust shadow */
   background: linear-gradient(to bottom right, #abc9fc, #639dfd);
   border-radius: 35px;
+  position: relative;
+}
+
+.weatherIcon-container .icon-column {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.weatherIcon-container .icon-column img {
+  position: absolute;
+  top: -500%;
+  width: 170%;
 }
 
 .currentSky {
   color: #fff;
   font-weight: 300;
-  font-size: 20px;
+  font-size: 25px;
   text-transform: capitalize;
+  position: relative;
+  top: 50px; /* Adjust the value as needed */
 }
 
 .content_section {
   padding: 1.5rem;
-}
-
-.content_section form {
-  margin: 1.5rem 0;
-  position: relative;
 }
 
 .day_info {
@@ -153,6 +156,15 @@ body {
   flex-direction: column;
   align-items: center;
   position: relative;
+  margin: 0 30px;
+  width: 100px;
+  height: 90px;
+  border-radius: 30px;
+  background: #f8f8f9;
+  box-shadow: 0 15px 20px rgba(117, 117, 211, 0.4);
+  text-align: center;
+  padding: 10px;
+  justify-content: center;
 }
 
 .info {
@@ -161,23 +173,6 @@ body {
   bottom: -30px; /* Adjust this value as needed */
   left: 50%;
   transform: translateX(-50%);
-}
-
-.content {
-  width: 100px;
-  height: 90px;
-  border-radius: 30px;
-  background: #f8f8f9;
-  box-shadow: 0 15px 20px rgba(117, 117, 211, 0.4);
-  text-align: center;
-  padding: 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.content:last-child {
-  margin-right: 0;
 }
 
 .title {
@@ -258,4 +253,58 @@ footer a:hover {
 
 .season-icon {
   width: 100px;
+}
+
+#search-form {
+  padding: 0px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.search-input {
+  padding: 15px;
+  font-size: 14px;
+  font-weight: 600;
+  border: 2px solid #ddd;
+  border-radius: 40px;
+  outline: none;
+  width: 80%;
+  margin-top: 60px; /* Adjusted margin to create more space for the button */
+  margin-top: -20px; /* Adjust margin-top to position the form higher */
+  z-index: 1; /* Ensure input is below the button */
+  box-shadow: 0px 3px 5px rgba(61, 100, 166, 0.2);
+}
+
+.search-input:focus {
+  border-color: #0056b3;
+}
+
+.search-button {
+  padding: 20px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  border: none;
+  border-radius: 40px;
+  background: linear-gradient(to bottom right, #c6beff, #8c7ff8);
+  box-shadow: 0px 3px 5px rgba(61, 100, 166, 0.2);
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-transform: uppercase;
+  position: absolute;
+  top: -22px;
+  left: 80%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.search-button:hover {
+  background: linear-gradient(
+    to bottom right,
+    #8c7ff8,
+    #4e3bab
+  ); /* Darker gradient for hover effect */
 }
