@@ -1,49 +1,64 @@
-function formatDate(date) {
-  let minutes = date.getMinutes();
-  let hours = date.getHours();
-  let day = date.getDate();
-  let month = date.getMonth() + 1;
-  let year = date.getFullYear();
-  let amPM = hours >= 12 ? "PM" : "AM";
+document.addEventListener("DOMContentLoaded", function () {
+  // Function to format the date
+  function formatDate(date) {
+    let minutes = date.getMinutes();
+    let hours = date.getHours();
+    let day = date.getDate();
+    let month = date.getMonth() + 1;
+    let year = date.getFullYear();
+    let amPM = hours >= 12 ? "PM" : "AM";
 
-  hours = hours % 12;
-  hours = hours ? hours : 12;
+    hours = hours % 12;
+    hours = hours ? hours : 12;
 
-  if (minutes < 10) {
-    minutes = `0${minutes}`;
+    if (minutes < 10) {
+      minutes = `0${minutes}`;
+    }
+
+    if (hours < 10) {
+      hours = `0${hours}`;
+    }
+
+    let days = [
+      "Sunday",
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+    ];
+
+    let months = [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December",
+    ];
+
+    let formattedDay = days[date.getDay()];
+    let formattedMonth = months[date.getMonth()];
+
+    return `${formattedDay}, ${day} ${formattedMonth} ${year} ${hours}:${minutes} ${amPM}`;
   }
 
-  if (hours < 10) {
-    hours = `0${hours}`;
-  }
+  // Get the current date
+  const currentDate = new Date();
 
-  let days = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ];
+  // Call the formatDate function to format the date
+  const formattedDate = formatDate(currentDate);
 
-  let months = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
-  ];
+  // Get the element with the class current-date
+  const currentDateElement = document.querySelector(".current-date");
 
-  let formattedDay = days[date.getDay()];
-  let formattedMonth = months[date.getMonth()];
-
-  return `${formattedDay}, ${day} ${formattedMonth} ${year} ${hours}:${minutes} ${amPM}`;
-}
+  // Set the formatted date as the content of the current-date element
+  currentDateElement.textContent = formattedDate;
+});
