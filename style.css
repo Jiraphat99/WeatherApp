@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Ruda:wght@400;600;700&display=swap");
 
+/* Global Styles */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -16,6 +17,7 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
+/* Weather App Container */
 .weatherApp {
   max-width: 1000px;
   width: 100%;
@@ -26,6 +28,7 @@ body {
   flex-direction: column;
 }
 
+/* Wrapper */
 .wrapper {
   display: grid;
   grid-template-columns: 4.5fr 4fr;
@@ -33,6 +36,7 @@ body {
   flex-grow: 1;
 }
 
+/* Current City Section */
 .currentCity-section {
   position: relative;
   border-radius: 25px;
@@ -58,27 +62,23 @@ body {
   border-radius: 35px;
 }
 
-.currentWeather-illustration {
+.currentWeather-illustration,
+.currentCity-section img {
   width: 80%;
   max-width: 400px;
   margin: 20px auto;
-}
-
-.currentCity-section img {
-  width: 80%;
   object-fit: cover;
-  margin: 0 auto;
 }
 
 .current-city {
   font-size: 40px;
 }
 
-/* New CSS for the wrapper div */
+/* Temperature and Feel Like */
 .temperature-feellike-wrapper {
   display: flex;
   flex-direction: column;
-  align-items: flex-end; /* Align elements to the right */
+  align-items: flex-end;
   width: 100%;
   position: relative;
   top: -20px;
@@ -87,29 +87,29 @@ body {
 .currentTemperature-container {
   display: flex;
   align-items: baseline;
-  justify-content: flex-end; /* Move elements to the right */
-  width: auto; /* Adjust width to allow right alignment */
+  justify-content: flex-end;
+  width: auto;
   margin-right: 10px;
   margin-bottom: 20px;
   position: relative;
 }
 
-.currentTemperature {
-  font-size: 100px;
+.currentTemperature,
+.currentTemperature-unit {
   background: linear-gradient(to bottom right, #fff, #abc9fc);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: 600;
+}
+
+.currentTemperature {
+  font-size: 100px;
   margin-right: 5px;
   margin-top: 10px;
 }
 
 .currentTemperature-unit {
   font-size: 50px;
-  background: linear-gradient(to bottom right, #fff, #abc9fc);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-weight: 600;
   position: relative;
   top: -40px;
 }
@@ -119,14 +119,15 @@ body {
   font-size: 18px;
   font-weight: 600;
   position: relative;
-  top: -50px; /* Adjust this value to move it lower */
+  top: -50px;
 }
 
+/* Weather Icon Container */
 .weatherIcon-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 2rem 2rem 3rem; /* Adjusted margin-top */
+  margin: 2rem 2rem 3rem;
   padding: 10px 20px;
   box-shadow: 5px 5px 10px rgba(65, 114, 197, 0.3);
   background: linear-gradient(to bottom right, #abc9fc, #639dfd);
@@ -135,20 +136,21 @@ body {
 }
 
 .weatherIcon-container .icon-column {
-  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
 }
 
 .weatherIcon-container .icon-column img {
-  width: 250px; /* Adjusted width for larger icon */
+  width: 250px;
   position: absolute;
   overflow: hidden;
-  top: -120px;
+  top: -150px;
   margin-left: 220px;
 }
 
+/* Content Section */
 .content_section {
   padding: 1.5rem;
 }
@@ -188,6 +190,7 @@ body {
   color: rgb(41, 41, 41);
 }
 
+/* List Content */
 .list_content ul {
   display: flex;
   justify-content: space-between;
@@ -223,6 +226,7 @@ body {
   cursor: pointer;
 }
 
+/* Footer */
 footer {
   text-align: center;
   padding: 3rem 0;
@@ -241,6 +245,7 @@ footer a:hover {
   text-decoration: underline;
 }
 
+/* Season Container */
 .season-container {
   color: #fff;
   display: flex;
@@ -251,19 +256,20 @@ footer a:hover {
   box-shadow: 5px 5px 8px rgba(65, 114, 197, 0.25);
   background: #abc9fc;
   border-radius: 20px;
-  height: 150px; /* Adjust the height as needed */
+  height: 150px;
   position: relative;
 }
 
 .season-icon {
   width: 120px;
-  position: relative; /* Set position to absolute */
-  top: 60px; /* Adjust vertical position */
-  right: 10px; /* Adjust horizontal position */
-  transform: translateY(-50%); /* Center vertically */
-  z-index: 1; /* Ensure it's behind other elements */
+  position: relative;
+  top: 60px;
+  right: 10px;
+  transform: translateY(-50%);
+  z-index: 1;
 }
 
+/* Search Form */
 #search-form {
   padding: 0px;
   border-radius: 20px;
@@ -281,7 +287,7 @@ footer a:hover {
   border-radius: 40px;
   outline: none;
   width: 80%;
-  margin-top: 10px; /* Move the search input lower */
+  margin-top: 10px;
   z-index: 1;
   box-shadow: 5px 5px 8px rgba(65, 114, 197, 0.25);
 }
@@ -303,7 +309,7 @@ footer a:hover {
   transition: background-color 0.3s ease;
   text-transform: uppercase;
   position: absolute;
-  top: 7px; /* Move the search button lower */
+  top: 7px;
   left: 80%;
   transform: translateX(-50%);
   z-index: 2;
@@ -313,6 +319,7 @@ footer a:hover {
   background: linear-gradient(to bottom right, #8c7ff8, #4e3bab);
 }
 
+/* Date and Country Info */
 .current-date {
   color: #929292;
   font-size: 16px;
@@ -323,19 +330,21 @@ footer a:hover {
   font-weight: 300;
 }
 
+/* Sky Condition */
 .currentSky {
   color: #fff;
   position: relative;
-  top: -50px; /* Adjust this value to move it up or down */
+  top: -50px;
 }
 
+/* This Week Section */
 .thisweek-title {
   color: #fff;
   font-size: 25px;
   font-weight: 600;
   display: flex;
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
+  justify-content: center;
+  align-items: center;
 }
 
 .thisweek-section {
@@ -344,16 +353,16 @@ footer a:hover {
   align-items: center;
   justify-content: center;
   padding: 20px;
-  margin-top: 50px; /* Increase the margin-top value to move it down */
-  margin-right: 20px; /* Adjust the margin-right value to move it to the left */
+  margin-top: 50px;
+  margin-right: 20px;
   background-color: #bdd5ff;
   border-radius: 15px;
   box-shadow: 5px 5px 8px rgba(65, 114, 197, 0.25);
-  max-width: 100%; /* Add a max-width to limit the width on larger screens */
+  max-width: 100%;
 }
 
 .thisweek-section ul {
-  margin-bottom: 20px; /* Adjust the distance between list items */
+  margin-bottom: 20px;
   gap: 5px;
 }
 
@@ -389,22 +398,22 @@ footer a:hover {
   z-index: 2;
   padding: 5px 10px;
   border-radius: 10px;
-  margin-top: -50px; /* Add margin-top to create space */
-  left: 70px; /* Move the container to the left */
+  margin-top: -50px;
+  left: 70px;
 }
 
 .season-title {
   font-size: 20px;
   font-weight: 300;
-  position: relative; /* Change position to relative */
+  position: relative;
   z-index: 1;
-  margin-top: -20px; /* Adjust margin-top as needed */
-  left: 0px; /* Move the title to the left */
+  margin-top: -20px;
+  left: 0px;
 }
 
 .selectedDate-container {
-  position: absolute; /* Set position to absolute */
-  top: 60%; /* Adjust vertical position */
-  right: 80px; /* Adjust horizontal position */
-  transform: translateY(-50%); /* Center vertically */
+  position: absolute;
+  top: 60%;
+  right: 80px;
+  transform: translateY(-50%);
 }

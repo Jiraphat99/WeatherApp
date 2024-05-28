@@ -18,7 +18,7 @@ function formatDate(date) {
     hours = `0${hours}`;
   }
 
-  let days = [
+  const days = [
     "Sunday",
     "Monday",
     "Tuesday",
@@ -28,7 +28,7 @@ function formatDate(date) {
     "Saturday",
   ];
 
-  let months = [
+  const months = [
     "January",
     "February",
     "March",
@@ -43,8 +43,8 @@ function formatDate(date) {
     "December",
   ];
 
-  let formattedDay = days[date.getDay()];
-  let formattedMonth = months[date.getMonth()];
+  const formattedDay = days[date.getDay()];
+  const formattedMonth = months[date.getMonth()];
 
   return `${formattedDay}, ${day} ${formattedMonth} ${year} ${hours}:${minutes} ${amPM}`;
 }
@@ -62,16 +62,14 @@ function fetchCityWeather(city) {
     })
     .catch((error) => {
       console.error("Error fetching weather data:", error);
-      // Show alert if no location is found
       alert("No location found. Please try again. 🐾");
-      // Reset all information to default
       resetWeatherDetails();
     });
 }
 
 // Function to update weather details on the page
 function updateWeatherDetails(data) {
-  console.log(data); // Log the data object to the console
+  console.log(data);
   document.getElementById("current-city").textContent = data.city;
   document.getElementById("currentCountry").textContent = data.country;
   document.getElementById("wind-speed").textContent = `${Math.round(
@@ -91,7 +89,7 @@ function updateWeatherDetails(data) {
 
   // Update weather icon based on condition
   let weatherIcon = "";
-  const description = data.condition.description.toLowerCase(); // Convert to lowercase for case-insensitive matching
+  const description = data.condition.description.toLowerCase();
   if (description.includes("clear sky")) {
     weatherIcon = "Warm-clearSky.png";
   } else if (description.includes("cloud")) {
@@ -110,7 +108,6 @@ function updateWeatherDetails(data) {
     weatherIcon = "default.png";
   }
 
-  // Set the src attribute of the weather icon
   document.getElementById("weather-icon").src = `src/image/${weatherIcon}`;
 }
 
@@ -124,29 +121,18 @@ function resetWeatherDetails() {
   document.getElementById("feelLike-value").textContent = "0";
   document.getElementById("currentSky").textContent = "Unknown";
 
-  // Reset weather icon to default
   document.getElementById("weather-icon").src = "src/image/404 Not Found.png";
 }
 
 // DOMContentLoaded event listener
-document.addEventListener("DOMContentLoaded", function () {
-  // Get the current date
+document.addEventListener("DOMContentLoaded", () => {
   const currentDate = new Date();
-
-  // Call the formatDate function to format the date
   const formattedDate = formatDate(currentDate);
+  document.querySelector(".current-date").textContent = formattedDate;
 
-  // Get the element with the class current-date
-  const currentDateElement = document.querySelector(".current-date");
-
-  // Set the formatted date as the content of the current-date element
-  currentDateElement.textContent = formattedDate;
-
-  // Add event listener to the form for city search
   const searchForm = document.getElementById("search-form");
-  searchForm.addEventListener("submit", function (event) {
-    event.preventDefault(); // Prevent form submission
-
+  searchForm.addEventListener("submit", (event) => {
+    event.preventDefault();
     const userInput = document.getElementById("search-input").value;
     fetchCityWeather(userInput);
   });
