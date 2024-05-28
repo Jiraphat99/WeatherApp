@@ -70,11 +70,18 @@ function updateWeatherDetails(data) {
   console.log(data); // Log the data object to the console
   document.getElementById("current-city").textContent = data.city;
   document.getElementById("currentCountry").textContent = data.country;
-  document.getElementById("wind-speed").textContent =
-    data.temperature.wind.speed;
-  // document.getElementById("currentTemperature").textContent = data.temperature.current;
-  // document.getElementById("humidity").textContent = data.temperature.humidity;
-  // document.getElementById("feelLike-value").textContent = data.temperature.feels_like;
+  document.getElementById("wind-speed").textContent = `${Math.round(
+    data.wind.speed
+  )} Km/h`;
+  document.getElementById("currentTemperature").textContent = Math.round(
+    data.temperature.current
+  );
+  document.getElementById("humidity").textContent = `${Math.round(
+    data.temperature.humidity
+  )}%`;
+  document.getElementById("feelLike-value").textContent = Math.round(
+    data.temperature.feels_like
+  );
 }
 
 // DOMContentLoaded event listener
