@@ -251,10 +251,17 @@ footer a:hover {
   box-shadow: 5px 5px 8px rgba(65, 114, 197, 0.25);
   background: #abc9fc;
   border-radius: 20px;
+  height: 150px; /* Adjust the height as needed */
+  position: relative;
 }
 
 .season-icon {
-  width: 100px;
+  width: 120px;
+  position: relative; /* Set position to absolute */
+  top: 60px; /* Adjust vertical position */
+  right: 10px; /* Adjust horizontal position */
+  transform: translateY(-50%); /* Center vertically */
+  z-index: 1; /* Ensure it's behind other elements */
 }
 
 #search-form {
@@ -274,8 +281,7 @@ footer a:hover {
   border-radius: 40px;
   outline: none;
   width: 80%;
-  margin-top: 60px;
-  margin-top: -20px;
+  margin-top: 10px; /* Move the search input lower */
   z-index: 1;
   box-shadow: 5px 5px 8px rgba(65, 114, 197, 0.25);
 }
@@ -297,7 +303,7 @@ footer a:hover {
   transition: background-color 0.3s ease;
   text-transform: uppercase;
   position: absolute;
-  top: -22px;
+  top: 7px; /* Move the search button lower */
   left: 80%;
   transform: translateX(-50%);
   z-index: 2;
@@ -338,7 +344,7 @@ footer a:hover {
   align-items: center;
   justify-content: center;
   padding: 20px;
-  margin-top: 100px; /* Increase the margin-top value to move it down */
+  margin-top: 50px; /* Increase the margin-top value to move it down */
   margin-right: 20px; /* Adjust the margin-right value to move it to the left */
   background-color: #bdd5ff;
   border-radius: 15px;
@@ -374,4 +380,31 @@ footer a:hover {
 .thisweek-section ul li img {
   width: 100%;
   object-fit: cover;
+}
+
+.selectedDate-forecastTemp {
+  font-size: 50px;
+  font-weight: 600;
+  position: relative;
+  z-index: 2;
+  padding: 5px 10px;
+  border-radius: 10px;
+  margin-top: -50px; /* Add margin-top to create space */
+  left: 70px; /* Move the container to the left */
+}
+
+.season-title {
+  font-size: 20px;
+  font-weight: 300;
+  position: relative; /* Change position to relative */
+  z-index: 1;
+  margin-top: -20px; /* Adjust margin-top as needed */
+  left: 0px; /* Move the title to the left */
+}
+
+.selectedDate-container {
+  position: absolute; /* Set position to absolute */
+  top: 60%; /* Adjust vertical position */
+  right: 80px; /* Adjust horizontal position */
+  transform: translateY(-50%); /* Center vertically */
 }

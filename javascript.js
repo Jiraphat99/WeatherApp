@@ -62,6 +62,10 @@ function fetchCityWeather(city) {
     })
     .catch((error) => {
       console.error("Error fetching weather data:", error);
+      // Show alert if no location is found
+      alert("No location found. Please try again. 🐾");
+      // Reset all information to default
+      resetWeatherDetails();
     });
 }
 
@@ -84,6 +88,44 @@ function updateWeatherDetails(data) {
   );
   document.getElementById("currentSky").textContent =
     data.condition.description;
+
+  // Update weather icon based on condition
+  let weatherIcon = "";
+  const description = data.condition.description.toLowerCase(); // Convert to lowercase for case-insensitive matching
+  if (description.includes("clear sky")) {
+    weatherIcon = "Warm-clearSky.png";
+  } else if (description.includes("cloud")) {
+    weatherIcon = "cloudy-day.png";
+  } else if (description.includes("shower rain")) {
+    weatherIcon = "Shower rain.png";
+  } else if (description.includes("rain")) {
+    weatherIcon = "Rain.png";
+  } else if (description.includes("thunderstorm")) {
+    weatherIcon = "thunderstorm.png";
+  } else if (description.includes("snow")) {
+    weatherIcon = "Snow.png";
+  } else if (description.includes("mist")) {
+    weatherIcon = "Mist.png";
+  } else {
+    weatherIcon = "default.png";
+  }
+
+  // Set the src attribute of the weather icon
+  document.getElementById("weather-icon").src = `src/image/${weatherIcon}`;
+}
+
+// Function to reset weather details to default
+function resetWeatherDetails() {
+  document.getElementById("current-city").textContent = "Unknown";
+  document.getElementById("currentCountry").textContent = "Unknown";
+  document.getElementById("wind-speed").textContent = "0 Km/h";
+  document.getElementById("currentTemperature").textContent = "0";
+  document.getElementById("humidity").textContent = "0%";
+  document.getElementById("feelLike-value").textContent = "0";
+  document.getElementById("currentSky").textContent = "Unknown";
+
+  // Reset weather icon to default
+  document.getElementById("weather-icon").src = "src/image/404 Not Found.png";
 }
 
 // DOMContentLoaded event listener
