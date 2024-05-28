@@ -194,22 +194,22 @@ body {
   align-items: center;
   list-style-type: none;
   margin: 3rem 0rem;
-  box-shadow: 5px 5px 8px rgba(65, 114, 197, 0.25);
 }
 
 .list_content ul li {
-  padding: 0.5rem;
+  background-color: #fff;
+  padding: 30px 5px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-radius: 1rem;
+  border-radius: 2rem;
   transition: all 0.3s ease-in;
 }
 
 .list_content ul li:hover {
+  color: #fff;
   transform: scale(1.1);
-  background-color: #fff;
-  color: #232931;
+  background-color: #9285f9;
   box-shadow: 0 5px 15px rgba(61, 100, 166, 0);
   cursor: pointer;
 }
@@ -247,7 +247,7 @@ footer a:hover {
   justify-content: center;
   align-items: center;
   margin: 3rem 2rem 3rem;
-  padding: 30px 30px;
+  padding: 0px;
   box-shadow: 5px 5px 8px rgba(65, 114, 197, 0.25);
   background: #abc9fc;
   border-radius: 20px;
@@ -281,7 +281,7 @@ footer a:hover {
 }
 
 .search-input:focus {
-  border-color: #0056b3;
+  border-color: #bfdeff;
 }
 
 .search-button {
@@ -321,4 +321,55 @@ footer a:hover {
   color: #fff;
   position: relative;
   top: -50px; /* Adjust this value to move it up or down */
+}
+
+.thisweek-title {
+  font-size: 25px;
+  font-weight: 600;
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+}
+
+.thisweek-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  margin-top: 100px; /* Increase the margin-top value to move it down */
+  margin-right: 20px; /* Adjust the margin-right value to move it to the left */
+  background-color: #bdd5ff;
+  border-radius: 15px;
+  box-shadow: 5px 5px 8px rgba(65, 114, 197, 0.25);
+  max-width: 100%; /* Add a max-width to limit the width on larger screens */
+}
+
+.thisweek-section ul {
+  margin-bottom: 20px; /* Adjust the distance between list items */
+  gap: 5px;
+}
+
+.thisweek-section ul li {
+  background-color: #fff;
+  padding: 30px 5px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 2rem;
+  transition: all 0.3s ease-in;
+}
+
+.thisweek-section ul li:hover {
+  color: #fff;
+  transform: scale(1.1);
+  background-color: #9285f9;
+  box-shadow: 0 5px 15px rgba(61, 100, 166, 0);
+  cursor: pointer;
+}
+
+.thisweek-section ul li img {
+  width: 30%;
+  object-fit: cover;
 }
