@@ -225,7 +225,7 @@ body {
 
 footer {
   text-align: center;
-  padding: 1rem 0;
+  padding: 3rem 0;
 }
 
 footer p {
@@ -324,6 +324,7 @@ footer a:hover {
 }
 
 .thisweek-title {
+  color: #fff;
   font-size: 25px;
   font-weight: 600;
   display: flex;
@@ -351,6 +352,7 @@ footer a:hover {
 }
 
 .thisweek-section ul li {
+  font-size: 12px;
   background-color: #fff;
   padding: 30px 5px;
   box-shadow: 5px 5px 8px rgba(65, 114, 197, 0.25);
@@ -370,6 +372,6 @@ footer a:hover {
 }
 
 .thisweek-section ul li img {
-  width: 30%;
+  width: 100%;
   object-fit: cover;
 }

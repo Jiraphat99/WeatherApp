@@ -82,6 +82,8 @@ function updateWeatherDetails(data) {
   document.getElementById("feelLike-value").textContent = Math.round(
     data.temperature.feels_like
   );
+  document.getElementById("currentSky").textContent =
+    data.condition.description;
 }
 
 // DOMContentLoaded event listener
